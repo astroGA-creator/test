@@ -12,6 +12,8 @@ import { CourseSeriesNav } from './components/CourseSeriesNav';
 import { EventRegisterPage } from './pages/EventRegisterPage';
 import { PaymentResultPage } from './pages/PaymentResultPage';
 import { FeedbackPage } from './pages/FeedbackPage';
+import { GatheringPage } from './pages/GatheringPage';
+import { ConsultationPage } from './pages/ConsultationPage';
 
 export default function App() {
   const getInitialPath = (): PageRoute => {
@@ -22,7 +24,7 @@ export default function App() {
     if (path.startsWith('/workshop')) {
       path = path.replace('/workshop', '/course') as PageRoute;
     }
-    const routes: PageRoute[] = ['/', '/course', '/course/series-1', '/course/series-2', '/course/series-3', '/register', '/register/series-2', '/register/series-3', '/payment-result', '/feedback'];
+    const routes: PageRoute[] = ['/', '/course', '/course/series-1', '/course/series-2', '/course/series-3', '/gathering', '/consultation', '/register', '/register/series-2', '/register/series-3', '/payment-result', '/feedback'];
     return routes.includes(path as PageRoute) ? path as PageRoute : '/';
   };
   const [currentPath, setCurrentPath] = useState<PageRoute>(getInitialPath);
@@ -38,6 +40,8 @@ export default function App() {
       '/course/series-1': '系列一・太陽月亮金星｜Galaxy Answers 星聲工作室',
       '/course/series-2': '系列二・太陽水星木星｜Galaxy Answers 星聲工作室',
       '/course/series-3': '系列三・太陽火星土星｜Galaxy Answers 星聲工作室',
+      '/gathering': '星光小聚｜Galaxy Answers 星聲工作室',
+      '/consultation': '星盤諮詢｜Galaxy Answers 星聲工作室',
       '/register': '系列二報名｜Galaxy Answers 星聲工作室',
       '/register/series-2': '系列二報名｜Galaxy Answers 星聲工作室',
       '/register/series-3': '系列三報名｜Galaxy Answers 星聲工作室',
@@ -101,6 +105,8 @@ export default function App() {
         {currentPath === '/course/series-1' && (
           <CourseSeries1Page onNavigate={handleNavigate} />
         )}
+        {currentPath === '/gathering' && <GatheringPage onNavigate={handleNavigate} />}
+        {currentPath === '/consultation' && <ConsultationPage onNavigate={handleNavigate} />}
         {currentPath === '/' && (
           <BrandInfoPage onNavigate={handleNavigate} />
         )}
