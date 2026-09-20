@@ -1,0 +1,181 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Noto Sans TC', sans-serif;
+    background-color: #0b1d26;
+    color: #f8fafc;
+    overflow-x: hidden;
+  }
+  
+  h1, h2, h3, .serif-font {
+    font-family: 'Noto Serif TC', serif;
+  }
+
+  /* 智慧排版：避免標題孤字斷行，優先保持語意塊完整 */
+  h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+  word-break: normal;
+  overflow-wrap: break-word;
+  min-width: 0;
+  max-width: 100%;
+  }
+}
+
+/* Fluid Responsive Typography 階層 */
+.fluid-title-hero {
+  font-size: clamp(1.75rem, 6.5vw, 4.25rem);
+  line-height: 1.25;
+}
+
+.fluid-title-h1 {
+  font-size: clamp(1.2rem, 4.8vw, 2.25rem);
+  line-height: 1.3;
+}
+
+.fluid-title-h2 {
+  font-size: clamp(1.125rem, 4vw, 1.875rem);
+  line-height: 1.35;
+}
+
+.fluid-title-h3 {
+  font-size: clamp(1.05rem, 3.5vw, 1.5rem);
+  line-height: 1.4;
+}
+
+/* 語意詞塊：在空間足夠時與相鄰詞塊同一行，空間不足時整塊換行，絕不單獨切斷中文字 */
+.title-phrase {
+  display: inline;
+  white-space: normal;
+}
+
+/* 星空背景與粒子 */
+.star-field {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  background: radial-gradient(circle at 30% 20%, #162f3a 0%, #0b1d26 70%, #07141a 100%);
+  overflow: hidden;
+}
+
+.star {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.4;
+  animation: twinkle var(--duration, 3s) infinite ease-in-out;
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.2;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.35);
+    box-shadow: 0 0 8px rgba(244, 208, 63, 0.6);
+  }
+}
+
+/* 琥珀色光暈按鈕 */
+.btn-amber {
+  background-color: #d28b4c;
+  color: white;
+  box-shadow: 0 4px 20px rgba(210, 139, 76, 0.4);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-amber:hover {
+  background-color: #e09b5d;
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 30px rgba(210, 139, 76, 0.65);
+}
+
+.btn-outline-amber {
+  border: 1px solid rgba(210, 139, 76, 0.5);
+  color: #d28b4c;
+  background: rgba(210, 139, 76, 0.05);
+  transition: all 0.3s ease;
+}
+
+.btn-outline-amber:hover {
+  border-color: #d28b4c;
+  background: rgba(210, 139, 76, 0.15);
+  color: #f4d03f;
+}
+
+/* 導師頭像樣式 */
+.mentor-avatar {
+  border: 2px solid rgba(244, 208, 63, 0.3);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  background-color: rgba(11, 29, 38, 0.5);
+}
+
+.mentor-avatar:hover {
+  border-color: #f4d03f;
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 10px 30px rgba(244, 208, 63, 0.25);
+}
+
+/* 玻璃擬態卡片 */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* 本地星空背景容器（優先讀取 /public/bg-stars.jpg 或 /public/bg-stars.svg，並支持自訂圖片及優美宇宙漸層 Fallback） */
+.cosmic-hero-bg {
+  background-image: radial-gradient(circle at 50% 30%, rgba(22, 47, 58, 0.4) 0%, rgba(11, 29, 38, 0.85) 75%, rgba(7, 20, 26, 1) 100%), url('/bg-stars.jpg'), url('/bg-stars.svg');
+  background-size: cover;
+  background-position: center;
+}
+
+/* RWD 文字容器：禁止內容撐破父層 */
+.text-fit {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+/* 長文字允許在容器內正常換行 */
+.text-fit-wrap {
+  max-width: 100%;
+  min-width: 0;
+  overflow-wrap: break-word;
+  word-break: normal;
+  white-space: normal;
+  box-sizing: border-box;
+}
+
+/* 手機版：避免標題過大造成不必要的換行 */
+@media (max-width: 767px) {
+  .mobile-fit-title {
+    font-size: clamp(1rem, 4.2vw, 1.5rem);
+    line-height: 1.4;
+    max-width: 100%;
+    min-width: 0;
+    overflow-wrap: break-word;
+    word-break: normal;
+    white-space: normal;
+  }
+
+  .mobile-fit-text {
+    font-size: clamp(0.875rem, 3.5vw, 1.125rem);
+    line-height: 1.7;
+    max-width: 100%;
+    min-width: 0;
+    overflow-wrap: break-word;
+    word-break: normal;
+    white-space: normal;
+  }
+}

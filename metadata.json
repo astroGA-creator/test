@@ -1,0 +1,6 @@
+{
+  "name": "Galaxy Answers 星聲工作室",
+  "description": "由心而生，探索星聲。用星座工具理解自己，找回信任自己的底氣。",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
