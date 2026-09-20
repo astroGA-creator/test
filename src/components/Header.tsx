@@ -17,7 +17,7 @@ export const Header: React.FC<HeaderProps> = ({ currentPath, onNavigate }) => {
 
   const handleBrandClick = () => {
     if (currentPath === '/') {
-      document.getElementById('brand-philosophy')?.scrollIntoView({ behavior: 'smooth' });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
       setMobileMenuOpen(false);
       return;
     }
@@ -25,7 +25,7 @@ export const Header: React.FC<HeaderProps> = ({ currentPath, onNavigate }) => {
     onNavigate('/');
     setMobileMenuOpen(false);
     window.setTimeout(() => {
-      document.getElementById('brand-philosophy')?.scrollIntoView({ behavior: 'smooth' });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }, 100);
   };
 

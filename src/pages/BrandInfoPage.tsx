@@ -132,11 +132,11 @@ export const BrandInfoPage: React.FC<BrandInfoPageProps> = ({ onNavigate }) => {
             onClick={() =>
               document.getElementById('brand-philosophy')?.scrollIntoView({ behavior: 'smooth' })
             }
-            className="mt-8 text-slate-300/80 hover:text-[#f4d03f] transition flex flex-col items-center gap-2 text-xs tracking-[0.25em] uppercase"
+            className="mt-8 text-white hover:text-[#f4d03f] transition flex flex-col items-center gap-3 text-sm sm:text-base font-semibold tracking-[0.18em]"
             aria-label="往下瀏覽品牌介紹"
           >
-            Explore
-            <span className="text-xl leading-none">↓</span>
+            認識品牌
+            <span className="text-2xl leading-none animate-bounce">↓</span>
           </button>
         </div>
       </section>
@@ -191,16 +191,11 @@ export const BrandInfoPage: React.FC<BrandInfoPageProps> = ({ onNavigate }) => {
 
       {/* 03 / What is Astrology - full-width banner */}
       <section id="why-astrology" className="scroll-mt-20 py-20">
-        <div className="container mx-auto px-6 max-w-5xl text-center mb-10">
-          <p className="text-[#f4d03f] text-xs tracking-[0.28em] uppercase mb-3">ABOUT ASTROLOGY</p>
-          <h2 className="fluid-title-h2 font-bold text-white serif-font">什麼是占星？</h2>
-        </div>
-
         <div
-          className="relative w-full min-h-[320px] md:min-h-[430px] flex items-center justify-center overflow-hidden bg-cover bg-center"
+          className="relative w-full aspect-[4/1] min-h-[240px] md:min-h-[320px] flex items-center justify-center overflow-hidden bg-cover bg-center"
           style={{
             backgroundImage:
-              "linear-gradient(90deg, rgba(7,20,26,.88), rgba(11,29,38,.45), rgba(7,20,26,.82)), url('https://images.unsplash.com/photo-1692138525040-7b6cb0629868?auto=format&fit=crop&fm=jpg&q=82&w=2400')",
+              "linear-gradient(90deg, rgba(7,20,26,.72), rgba(11,29,38,.30), rgba(7,20,26,.72)), url('/images/brandpage_sub_banner.png')",
           }}
         >
           <div className="absolute inset-0 bg-gradient-to-b from-[#0b1d26]/20 via-transparent to-[#0b1d26]/55" />
@@ -214,7 +209,12 @@ export const BrandInfoPage: React.FC<BrandInfoPageProps> = ({ onNavigate }) => {
           </div>
         </div>
 
-        <div className="container mx-auto px-6 max-w-5xl pt-14">
+        <div className="container mx-auto px-6 max-w-5xl text-center pt-14 pb-8">
+          <p className="text-[#f4d03f] text-xs tracking-[0.28em] uppercase mb-3">ABOUT ASTROLOGY</p>
+          <h2 className="fluid-title-h2 font-bold text-white serif-font">什麼是占星？</h2>
+        </div>
+
+        <div className="container mx-auto px-6 max-w-5xl">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14 items-center">
             <div className="relative">
               <div className="overflow-hidden rounded-[2rem] border border-white/10 shadow-2xl max-w-lg mx-auto">
@@ -331,12 +331,10 @@ export const BrandInfoPage: React.FC<BrandInfoPageProps> = ({ onNavigate }) => {
 
       {/* 06 / Galaxy Moments */}
       <section id="moments" className="container mx-auto px-6 py-20 max-w-6xl">
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-5 mb-10">
-          <div>
-            <p className="text-[#f4d03f] text-xs tracking-[0.28em] uppercase mb-3">MOMENTS AT GALAXY ANSWERS</p>
-            <h2 className="fluid-title-h2 font-bold text-white serif-font">我們一起度過的星光時刻</h2>
-          </div>
-          <p className="text-slate-400 text-sm max-w-md leading-relaxed">
+        <div className="text-center max-w-3xl mx-auto mb-10">
+          <p className="text-[#f4d03f] text-xs tracking-[0.28em] uppercase mb-3">MOMENTS AT GALAXY ANSWERS</p>
+          <h2 className="fluid-title-h2 font-bold text-white serif-font mb-5">我們一起度過的星光時刻</h2>
+          <p className="text-slate-400 text-sm max-w-2xl mx-auto leading-relaxed">
             課程、交流、分享與相聚。這裡先放版型示意，之後可以直接換成你們最喜歡的活動照片。
           </p>
         </div>
