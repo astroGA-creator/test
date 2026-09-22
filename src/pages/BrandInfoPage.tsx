@@ -211,29 +211,53 @@ export const BrandInfoPage: React.FC<BrandInfoPageProps> = ({ onNavigate }) => {
           }}
         >
           <div className="absolute inset-0 bg-gradient-to-b from-[#0b1d26]/20 via-transparent to-[#0b1d26]/55" />
-
-          <div className="relative z-10 px-6 py-16 max-w-5xl mx-auto text-center">
-            <p className="text-xs sm:text-sm text-[#f4d03f] tracking-[0.3em] uppercase mb-5">
-              A WAY TO UNDERSTAND YOURSELF
-            </p>
-
-            <div className="w-full max-w-[96vw] mx-auto overflow-hidden">
-              <h3
-                className="
-                  whitespace-nowrap
-                  text-center
-                  font-bold
-                  text-white
-                  serif-font
-                  drop-shadow-2xl
-                  leading-none
-                  text-[clamp(0.72rem,2.55vw,3rem)]
-                "
-              >
-                不是每個人都需要學占星。但每個人，都需要一套理解自己的方法。
-              </h3>
-            </div>
-          </div>
+            <div className="relative z-10 w-full px-3 sm:px-6 py-16 text-center">
+                  <p
+                    className="
+                      whitespace-nowrap
+                      text-[clamp(0.5rem,1.15vw,0.9rem)]
+                      text-[#f4d03f]
+                      tracking-[0.25em]
+                      uppercase
+                      mb-5
+                    "
+                  >
+                    A WAY TO UNDERSTAND YOURSELF
+                  </p>
+                
+                  <h3
+                    className="
+                      w-full
+                      text-center
+                      font-bold
+                      text-white
+                      serif-font
+                      drop-shadow-2xl
+                      leading-[1.45]
+                    "
+                  >
+                    <span
+                      className="
+                        block
+                        whitespace-nowrap
+                        text-[clamp(0.9rem,2.8vw,3rem)]
+                      "
+                    >
+                      不是每個人都要學占星。
+                    </span>
+                
+                    <span
+                      className="
+                        block
+                        whitespace-nowrap
+                        text-[clamp(0.75rem,2.8vw,3rem)]
+                      "
+                    >
+                      但每個人，都需要一套理解自己的方法。
+                    </span>
+                  </h3>
+                </div>
+          
         </div>
 
         <div className="container mx-auto px-6 max-w-5xl pt-14 pb-8">
