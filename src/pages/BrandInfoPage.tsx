@@ -217,11 +217,22 @@ export const BrandInfoPage: React.FC<BrandInfoPageProps> = ({ onNavigate }) => {
               A WAY TO UNDERSTAND YOURSELF
             </p>
 
-            <h3 className="text-[clamp(1.65rem,4vw,3.5rem)] font-bold text-white serif-font leading-[1.5] drop-shadow-2xl">
-              不是每個人都需要學占星。
-              <br />
-              但每個人，都需要一套理解自己的方法。
-            </h3>
+            <div className="w-full max-w-[96vw] mx-auto overflow-hidden">
+              <h3
+                className="
+                  whitespace-nowrap
+                  text-center
+                  font-bold
+                  text-white
+                  serif-font
+                  drop-shadow-2xl
+                  leading-none
+                  text-[clamp(0.72rem,2.55vw,3rem)]
+                "
+              >
+                不是每個人都需要學占星。但每個人，都需要一套理解自己的方法。
+              </h3>
+            </div>
           </div>
         </div>
 
