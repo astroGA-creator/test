@@ -298,85 +298,85 @@ export const BrandInfoPage: React.FC<BrandInfoPageProps> = ({ onNavigate }) => {
       </section>
 
       {/* 04 / Three service paths */}
-      <section
-        id="services"
-        className="container mx-auto px-6 py-20 max-w-6xl"
-      >
-        <div className="text-center max-w-3xl mx-auto mb-14">
-          <p className="text-[#f4d03f] text-xs tracking-[0.28em] uppercase mb-3">
-            EXPLORE GALAXY ANSWERS
-          </p>
+<section
+  id="services"
+  className="container mx-auto px-6 py-20 max-w-6xl"
+>
+  <div className="text-center max-w-3xl mx-auto mb-14">
+    <p className="text-[#f4d03f] text-xs tracking-[0.28em] uppercase mb-3">
+      EXPLORE GALAXY ANSWERS
+    </p>
 
-          <h2 className="fluid-title-h2 font-bold text-white serif-font mb-5">
-            找到適合你的探索方式
-          </h2>
+    <h2 className="fluid-title-h2 font-bold text-white serif-font mb-5">
+      找到適合你的探索方式
+    </h2>
 
-          <p className="text-slate-400 text-sm sm:text-base leading-relaxed">
-            不同的時刻，需要的陪伴也不一樣。從學習、相聚到一對一對話，選擇此刻最接近你的方式。
-          </p>
-        </div>
+    <p className="text-slate-400 text-sm sm:text-base leading-relaxed">
+      從課程、相聚到一對一對話，選擇此刻最接近你的方式。
+    </p>
+  </div>
 
-        <div className="space-y-10 md:space-y-16">
-          {services.map((service, index) => {
-            const Icon = service.icon;
-            const reverse = index % 2 === 1;
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+    {services.map((service) => {
+      const Icon = service.icon;
 
-            return (
-              <article
-                key={service.title}
-                className="group rounded-[2rem] md:rounded-[2.5rem] overflow-hidden border border-white/10 bg-white/[0.035] shadow-2xl"
-              >
-                <div className="grid md:grid-cols-2 min-h-[420px]">
-                  <div
-                    className={`${
-                      reverse ? 'md:order-2' : ''
-                    } relative min-h-[280px] md:min-h-full overflow-hidden`}
-                  >
-                    <img
-                      src={service.image}
-                      alt={service.alt}
-                      className="absolute inset-0 w-full h-full object-cover transition duration-700 group-hover:scale-[1.03]"
-                    />
+      return (
+        <button
+          key={service.title}
+          onClick={() => onNavigate(service.path)}
+          className="group relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.03] min-h-[460px] text-left shadow-2xl"
+        >
+          {/* 背景圖片 */}
+          <img
+            src={service.image}
+            alt={service.alt}
+            className="absolute inset-0 w-full h-full object-cover transition duration-700 group-hover:scale-105"
+          />
 
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#07141a]/65 via-transparent to-transparent md:bg-gradient-to-r md:from-[#07141a]/20 md:to-transparent" />
-                  </div>
+          {/* 預設淡遮罩 */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[#07141a]/80 via-[#07141a]/25 to-transparent transition duration-500 group-hover:from-[#07141a]/90 group-hover:via-[#07141a]/55 group-hover:to-[#07141a]/35" />
 
-                  <div
-                    className={`${
-                      reverse ? 'md:order-1' : ''
-                    } p-8 sm:p-10 md:p-12 lg:p-14 flex flex-col justify-center`}
-                  >
-                    <div className="inline-flex items-center gap-2 text-[#f4d03f] text-[11px] sm:text-xs tracking-[0.2em] uppercase mb-5">
-                      <Icon className="w-4 h-4" />
-                      <span>{service.eyebrow}</span>
-                    </div>
+          {/* 預設底部標題 */}
+          <div className="absolute bottom-0 left-0 right-0 p-6 md:group-hover:opacity-0 transition duration-300">
+            <p className="text-[#f4d03f] text-[11px] tracking-[0.2em] uppercase mb-2">
+              {service.eyebrow}
+            </p>
+            <h3 className="text-white text-2xl md:text-3xl font-bold serif-font">
+              {service.title}
+            </h3>
+          </div>
 
-                    <h3 className="text-3xl sm:text-4xl font-bold text-white serif-font mb-4">
-                      {service.title}
-                    </h3>
+          {/* Hover 內容 */}
+          <div className="absolute inset-0 p-6 sm:p-8 flex flex-col justify-end md:justify-center opacity-100 md:opacity-0 md:group-hover:opacity-100 transition duration-500">
+            <div className="max-w-sm">
+              <div className="inline-flex items-center gap-2 text-[#f4d03f] text-[11px] sm:text-xs tracking-[0.2em] uppercase mb-4">
+                <Icon className="w-4 h-4" />
+                <span>{service.eyebrow}</span>
+              </div>
 
-                    <p className="text-[#d28b4c] text-lg sm:text-xl serif-font font-semibold leading-relaxed mb-5">
-                      {service.subtitle}
-                    </p>
+              <h3 className="text-white text-2xl sm:text-3xl font-bold serif-font mb-3">
+                {service.title}
+              </h3>
 
-                    <p className="text-slate-300 text-sm sm:text-base leading-[1.9] font-light mb-8">
-                      {service.description}
-                    </p>
+              <p className="text-[#d28b4c] text-base sm:text-lg serif-font font-semibold leading-relaxed mb-4">
+                {service.subtitle}
+              </p>
 
-                    <button
-                      onClick={() => onNavigate(service.path)}
-                      className="self-start inline-flex items-center gap-2 text-[#f4d03f] font-semibold text-sm sm:text-base border-b border-[#f4d03f]/40 pb-1 hover:border-[#f4d03f] transition"
-                    >
-                      {service.cta}
-                      <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                    </button>
-                  </div>
-                </div>
-              </article>
-            );
-          })}
-        </div>
-      </section>
+              <p className="text-slate-200 text-sm sm:text-base leading-[1.8] font-light mb-6">
+                {service.description}
+              </p>
+
+              <div className="inline-flex items-center gap-2 text-[#f4d03f] font-semibold text-sm sm:text-base border-b border-[#f4d03f]/40 pb-1">
+                {service.cta}
+                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+              </div>
+            </div>
+          </div>
+        </button>
+      );
+    })}
+  </div>
+</section>
 
       {/* 05 / Meet Galaxy Answers */}
       <section
