@@ -324,7 +324,7 @@ export const BrandInfoPage: React.FC<BrandInfoPageProps> = ({ onNavigate }) => {
         <button
           key={service.title}
           onClick={() => onNavigate(service.path)}
-          className="group relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.03] min-h-[460px] text-left shadow-2xl"
+          className="group relative aspect-square overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.03] text-left shadow-2xl"
         >
           {/* 背景圖片 */}
           <img
@@ -448,55 +448,7 @@ export const BrandInfoPage: React.FC<BrandInfoPageProps> = ({ onNavigate }) => {
         </div>
       </section>
 
-      {/* 06 / Galaxy Moments */}
-      <section
-        id="moments"
-        className="container mx-auto px-6 py-20 max-w-6xl"
-      >
-        <div className="text-center max-w-3xl mx-auto mb-10">
-          <p className="text-[#f4d03f] text-xs tracking-[0.28em] uppercase mb-3">
-            MOMENTS AT GALAXY ANSWERS
-          </p>
-
-          <h2 className="fluid-title-h2 font-bold text-white serif-font mb-5">
-            我們一起度過的星光時刻
-          </h2>
-
-          <p className="text-slate-400 text-sm max-w-2xl mx-auto leading-relaxed">
-            課程、交流、分享與相聚。這裡先放版型示意，之後可以直接換成你們最喜歡的活動照片。
-          </p>
-        </div>
-
-        <div className="grid grid-cols-2 md:grid-cols-12 auto-rows-[150px] md:auto-rows-[180px] gap-3 md:gap-4">
-          {moments.map((moment, index) => {
-            const spans = [
-              'col-span-2 md:col-span-7 row-span-2',
-              'col-span-1 md:col-span-5 row-span-1',
-              'col-span-1 md:col-span-5 row-span-1',
-              'col-span-1 md:col-span-4 row-span-1',
-              'col-span-1 md:col-span-4 row-span-1',
-              'col-span-2 md:col-span-4 row-span-1',
-            ];
-
-            return (
-              <div
-                key={moment.src}
-                className={`${spans[index]} relative overflow-hidden rounded-2xl border border-white/10 group`}
-              >
-                <img
-                  src={moment.src}
-                  alt={moment.alt}
-                  className="absolute inset-0 w-full h-full object-cover transition duration-700 group-hover:scale-105"
-                />
-
-                <div className="absolute inset-0 bg-gradient-to-t from-[#07141a]/55 via-transparent to-transparent" />
-              </div>
-            );
-          })}
-        </div>
-      </section>
-
-      {/* 07 / What's on */}
+      {/* 06 / What's on */}
       <section
         id="whats-on"
         className="container mx-auto px-6 py-20 max-w-6xl"
