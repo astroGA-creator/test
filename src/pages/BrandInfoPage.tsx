@@ -462,9 +462,6 @@ export const BrandInfoPage: React.FC<BrandInfoPageProps> = ({ onNavigate }) => {
             最近，可以來找我們
           </h2>
 
-          <p className="text-slate-400 text-sm sm:text-base">
-            把近期可以參加的課程與小聚放在這裡，讓首頁最後自然接到行動。
-          </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-6">
@@ -480,10 +477,6 @@ export const BrandInfoPage: React.FC<BrandInfoPageProps> = ({ onNavigate }) => {
 
             <p className="text-[#d28b4c] serif-font mb-4">
               突破表達無力感，發揮社群影響力
-            </p>
-
-            <p className="text-slate-400 text-sm leading-relaxed mb-7">
-              目前課程資訊先沿用既有內容，之後可依實際開課日期更新。
             </p>
 
             <button
@@ -509,9 +502,6 @@ export const BrandInfoPage: React.FC<BrandInfoPageProps> = ({ onNavigate }) => {
               聊一點星座，也認識一個新的有趣主題
             </p>
 
-            <p className="text-slate-400 text-sm leading-relaxed mb-7">
-              此區先建立框架，之後可替換成當月主題、合作講師、日期與活動照片。
-            </p>
 
             <button
               onClick={() => onNavigate('/gathering')}
